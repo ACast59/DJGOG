@@ -1,4 +1,5 @@
-$('.related-carousel').slick({
+$(document).ready(function() {
+  $('.related-carousel').slick({
     autoplay: true,
     infinite: true,
     slidesToShow: 3,
@@ -36,6 +37,7 @@ $('.related-carousel').slick({
   
   $('.related-carousel-controls .carousel-arrow-right').click(function(e) {
     $('.related-carousel').slick('slickNext');
+  });
 });
 
 function related_results_labels(e) {
@@ -46,7 +48,7 @@ function related_results_labels(e) {
       a = r.replace("/s72-c/", "/w350-h225-c/");
     if (e.feed.entry[l].media$thumbnail) var r = e.feed.entry[l].media$thumbnail.url,
       a = r.replace("/s72-c/", "/w350-h225-c/");
-    else if (null != e.feed.entry[l].content.$t.match(/src=(.+?[\.jpg|\.gif|\.png]")/)) var a = e.feed.entry[l].content.$t.match(/src=(.+?[\.jpg|\.gif|\.png]")/)[1];
+    else if (null != e.feed.entry[l].content.$t.match(/src=(.+?[\.jpg|\.gif|\.png]")/)) var a = e.feed.entry[l].content.$t.match(/src=(.+?[\.jpg|\.gif|\.png]")/)[1]; 
     else var a = "http://1.bp.blogspot.com/-a-3WZRtj7pw/VoxaVk-cPMI/AAAAAAAABMo/ivQ1HVw0ZME/s250-Ic42/no-thumbnail.png";
     relatedImage[relatedTitlesNum] = a;
     for (var n = 0; n < t.link.length; n++)
