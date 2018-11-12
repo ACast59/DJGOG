@@ -427,7 +427,7 @@ a.blog-pager-older-link{float:right}
 #sidebar-right .PopularPosts .item-thumbnail-only,#sidebar-right .PopularPosts .item-content{position:relative;overflow:hidden}
 #sidebar-right .PopularPosts .item-thumbnail{margin:0;width:100%;height:160px}
 #sidebar-right .PopularPosts .item-thumbnail a{width:100%;height:160px;display:block}
-#sidebar-right .PopularPosts .item-thumbnail a:after{content:no-close-quote;position:absolute;bottom:0;left:0;width:100%;height:110px;background:url(http://2.bp.blogspot.com/-prvvB8O4yno/Vpxm7GhblYI/AAAAAAAACmo/lGho0jYx-Eg/s1600-r/gradient.png) repeat-x;background-size:100% 100%;opacity:.8}
+#sidebar-right .PopularPosts .item-thumbnail a:after{content:no-close-quote;position:absolute;bottom:0;left:0;width:100%;height:110px;background:url(https://2.bp.blogspot.com/-prvvB8O4yno/Vpxm7GhblYI/AAAAAAAACmo/lGho0jYx-Eg/s1600-r/gradient.png) repeat-x;background-size:100% 100%;opacity:.8}
 #sidebar-right .PopularPosts img{width:100%;height:160px}
 #sidebar-right .PopularPosts .item-title{position:absolute;bottom:0;left:0;width:100%;z-index:2;padding:10px 15px;box-sizing:border-box}
 #sidebar-right .PopularPosts .item-title a{color:#fff;font-size:15px}
