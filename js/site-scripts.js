@@ -91,10 +91,7 @@ $(".intro-random .HTML .widget-content span").each(function() {
                             var g = e.feed.entry[i].title.$t;
                             var c = e.feed.entry[i].content.$t;
                             var $c = $('<div>').html(c);
-                            if (c.indexOf("//www.youtube.com/embed/") > -1) {
-                                var p = e.feed.entry[i].media$thumbnail.url.replace('/default.jpg', '/mqdefault.jpg');
-                                var k = p
-                            } else if (c.indexOf("<img") > -1) {
+                            if (c.indexOf("<img") > -1) {
                                 var q = $c.find('img:first').attr('src').replace('s72-c', 's1600');
                                 var k = q
                             } else {
@@ -169,10 +166,7 @@ $(".featured .HTML .widget-content span").each(function() {
                     r = textMonth[parseInt(n, 10)] + ' ' + o + ', ' + m;
                 var c = e.feed.entry[i].content.$t;
                 var $c = $('<div>').html(c);
-                if (c.indexOf("//www.youtube.com/embed/") > -1) {
-                    var p = e.feed.entry[i].media$thumbnail.url.replace("/default.jpg", "/mqdefault.jpg");
-                    var k = p
-                } else if (c.indexOf("<img") > -1) {
+                if (c.indexOf("<img") > -1) {
                     var q = $c.find("img:first").attr("src").replace("s72-c", "s1600");
                     var k = q
                 } else {
@@ -206,10 +200,7 @@ $("#related-posts").each(function() {
                 var g = e.feed.entry[i].title.$t;
                 var c = e.feed.entry[i].content.$t;
                 var $c = $('<div>').html(c);
-                if (c.indexOf("//www.youtube.com/embed/") > -1) {
-                    var p = e.feed.entry[i].media$thumbnail.url.replace('/default.jpg', '/mqdefault.jpg');
-                    var k = p
-                } else if (c.indexOf("<img") > -1) {
+                if (c.indexOf("<img") > -1) {
                     var q = $c.find('img:first').attr('src').replace('s72-c', 's1600');
                     var k = q
                 } else {
