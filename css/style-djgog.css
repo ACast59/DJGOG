@@ -221,7 +221,7 @@ li.li-home{float:left;display:inline-block;padding:0}
 .featured .ib-thumb{width:100%;height:180px;display:block}
 .featured li:hover .img-overlay{background-color:rgba(0,0,0,0.1)}
 .featured .rcp-title{font-size:14px;line-height: 1.3em;padding-top:2px;}
-.featured .ib-thumb:after{content:no-close-quote;position:absolute;bottom:0;left:0;width:100%;height:100px;background:url(http://2.bp.blogspot.com/-prvvB8O4yno/Vpxm7GhblYI/AAAAAAAACmo/lGho0jYx-Eg/s1600-r/gradient.png) repeat-x;background-size:100% 100%;opacity:.8}
+.featured .ib-thumb:after{content:no-close-quote;position:absolute;bottom:0;left:0;width:100%;height:100px;background:url(https://2.bp.blogspot.com/-prvvB8O4yno/Vpxm7GhblYI/AAAAAAAACmo/lGho0jYx-Eg/s1600-r/gradient.png) repeat-x;background-size:100% 100%;opacity:.8}
 .featured li:first-child .ib-thumb:after{content:no-close-quote;height:180px;}
 .featured li{width:40%;height:180px;float:right;position:relative;padding:0;z-index:2;overflow:hidden}
 .featured li:first-child{float:left;width:60%;height:360px}
