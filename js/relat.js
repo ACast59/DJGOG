@@ -40,7 +40,7 @@ function printRelatedLabels() {
   var i = 0;
   document.write('<div class="row">');
   while (i < relatedTitles.length && i < 20) {
-    document.write('<div class="col-12 col-sm-4"><div class="card card-widget"><div class="card-img"><a href="' + relatedUrls[r] + '"><img src="' + relatedThumb[r] + '" alt="' + relatedTitles[r] + '"/></a></div><div class="card-block"><h4 class="card-title"><a href="' + relatedUrls[r] + '">' + relatedTitles[r] + '</a></h4></div></div></div>');
+    document.write('<div class="col-12 col-sm-4"><div class="card card-widget"><div class="card-img"><a href="' + relatedUrls[r] + '"><img src="' + relatedThumb[r].replace("/s72-c", "/w350-h225-c") + '" alt="' + relatedTitles[r] + '"/></a></div><div class="card-block"><h4 class="card-title"><a href="' + relatedUrls[r] + '">' + relatedTitles[r] + '</a></h4></div></div></div>');
     if (r < relatedTitles.length - 1) {
       r++;
     } else {
