@@ -39,7 +39,7 @@ function printRelatedLabels() {
   var r = Math.floor((relatedTitles.length - 1) * Math.random());
   var i = 0;
   document.write('<div class="row">');
-  while (i < relatedTitles.length && i < 20) {
+  while (i < relatedTitles.length && i < 3) {
     document.write('<div class="col-12 col-sm-4"><div class="card card-widget"><div class="card-img"><a href="' + relatedUrls[r] + '"><img src="' + relatedThumb[r].replace("/s72-c", "/w320-h230-c") + '" alt="' + relatedTitles[r] + '"/></a></div><div class="card-block"><h4 class="card-title"><a href="' + relatedUrls[r] + '">' + relatedTitles[r] + '</a></h4></div></div></div>');
     if (r < relatedTitles.length - 1) {
       r++;
