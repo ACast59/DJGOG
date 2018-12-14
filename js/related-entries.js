@@ -28,10 +28,9 @@ $("#related-posts").each(function() {
         } else {
           var k = NO_IMAGE
         }
-        h += '<div class="col-12 col-sm-4"><div class="card card-widget"><div class="card-img"><a href="' + u + '"><img src="' + k + '" alt="' + g + '"/></a></div><div class="card-block"><h4 class="card-title"><a href="' + u + '">' + g + '</a></h4><div class="card-meta"><span><i class="fa fa-clock-o"></i> ' + r + '</span></div></div></div></div>'
+        h += '<div class="col-12 col-sm-4"><div class="card card-widget"><div class="card-img"><a href="' + u + '"><img class="related-img" src="' + k + '" alt="' + g + '"/></a></div><div class="card-block"><h4 class="card-title"><a href="' + u + '">' + g + '</a></h4><div class="card-meta"><span><i class="fa fa-clock-o"></i> ' + r + '</span></div></div></div></div>'
       }
-      h += '</div><div class="clear"/>';
-      $("#related-ready").html(h);
+      $("#related-posts").html(h);
       $('.related-img').each(function() {
         $(this).attr('style', function(i, src) {
           return src.replace('/default.jpg', '/hqdefault.jpg')
