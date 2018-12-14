@@ -1,4 +1,4 @@
-$("#related-ready").each(function() {
+$("#related-posts").each(function() {
   var b = $(this).text();
   $.ajax({
     url: "/feeds/posts/default/-/" + b + "?alt=json-in-script&max-results=3",
@@ -22,10 +22,7 @@ $("#related-ready").each(function() {
         r = MONTH_FORMAT[parseInt(w, 10)] + ' ' + f + ', ' + v;
         var c = e.feed.entry[i].content.$t;
         var $c = $('<div>').html(c);
-        if (c.indexOf("//www.youtube.com/embed/") > -1) {
-          var p = e.feed.entry[i].media$thumbnail.url.replace('/default.jpg', '/mqdefault.jpg');
-          var k = p
-        } else if (c.indexOf("<img") > -1) {
+        if (c.indexOf("<img") > -1) {
           var q = $c.find('img:first').attr('src').replace('s72-c', 's1600');
           var k = q
         } else {
@@ -45,3 +42,12 @@ $("#related-ready").each(function() {
     }
   });
 });
+
+document.write('');
+
+<div id='related-wrap'>
+  <div class='related-title'>
+    <h2>Related Posts</h2>
+  </div>
+  <div id='related-posts'></div>
+</div>
