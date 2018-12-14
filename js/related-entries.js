@@ -37,6 +37,6 @@ function printRelatedLabels(e) {
 }
 
 var relatedTitles = new Array,
-var relatedImage = new Array,
-var relatedTitlesNum = 0,
-var relatedUrls = new Array;
+relatedImage = new Array,
+relatedTitlesNum = 0,
+relatedUrls = new Array;
