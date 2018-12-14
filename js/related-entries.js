@@ -1,52 +1,47 @@
-var relatedTitles = new Array();
-var relatedThumb = new Array();
-var relatedDate = new Array();
-var relatedTitlesNum = 0;
-var relatedUrls = new Array();
-function related_results_labels(json) {
-  for (var i = 0; i < json.feed.entry.length; i++) {
-    var entry = json.feed.entry[i];
-    relatedTitles[relatedTitlesNum] = entry.title.$t;
-    relatedThumb[relatedTitlesNum] = entry.media$thumbnail.url;
-    for (var k = 0; k < entry.link.length; k++) {
-      if (entry.link[k].rel == 'alternate') {
-        relatedUrls[relatedTitlesNum] = entry.link[k].href;
-        relatedTitlesNum++;
-        break;
+$("#related-ready").each(function() {
+  var b = $(this).text();
+  $.ajax({
+    url: "/feeds/posts/default/-/" + b + "?alt=json-in-script&max-results=3",
+    type: 'get',
+    dataType: "jsonp",
+    success: function(e) {
+      var u = "";
+      var h = '<div class="related-posts">';
+      for (var i = 0; i < e.feed.entry.length; i++) {
+        for (var j = 0; j < e.feed.entry[i].link.length; j++) {
+          if (e.feed.entry[i].link[j].rel == "alternate") {
+            u = e.feed.entry[i].link[j].href;
+            break
+          }
+        }
+        var g = e.feed.entry[i].title.$t;
+        var d = e.feed.entry[i].published.$t,
+        v = d.substring(0, 4),
+        w = d.substring(5, 7),
+        f = d.substring(8, 10),
+        r = MONTH_FORMAT[parseInt(w, 10)] + ' ' + f + ', ' + v;
+        var c = e.feed.entry[i].content.$t;
+        var $c = $('<div>').html(c);
+        if (c.indexOf("//www.youtube.com/embed/") > -1) {
+          var p = e.feed.entry[i].media$thumbnail.url.replace('/default.jpg', '/mqdefault.jpg');
+          var k = p
+        } else if (c.indexOf("<img") > -1) {
+          var q = $c.find('img:first').attr('src').replace('s72-c', 's1600');
+          var k = q
+        } else {
+          var k = NO_IMAGE
+        }
+        h += '<div class="col-12 col-sm-4"><div class="card card-widget"><div class="card-img"><a href="' + u + '"><img src="' + k + '" alt="' + g + '"/></a></div><div class="card-block"><h4 class="card-title"><a href="' + u + '">' + g + '</a></h4><div class="card-meta"><span><i class="fa fa-clock-o"></i> ' + r + '</span></div></div></div></div>'
       }
+      h += '</div><div class="clear"/>';
+      $("#related-ready").html(h);
+      $('.related-img').each(function() {
+        $(this).attr('style', function(i, src) {
+          return src.replace('/default.jpg', '/hqdefault.jpg')
+        }).attr('style', function(i, src) {
+          return src.replace('s72-c', 's1600')
+        })
+      })
     }
-  }
-}
-function removeRelatedDuplicates() {
-  var tmp = new Array(0);
-  var tmp2 = new Array(0);
-  for(var i = 0; i < relatedUrls.length; i++) {
-    if(!contains(tmp, relatedUrls[i])) {
-      tmp.length += 1;
-      tmp[tmp.length - 1] = relatedUrls[i];
-      tmp2.length += 1;
-      tmp2[tmp2.length - 1] = relatedTitles[i];
-    }
-  }
-  relatedTitles = tmp2;
-  relatedUrls = tmp;
-}
-function contains(a, e) {
-  for(var j = 0; j < a.length; j++) if (a[j]==e) return true;
-  return false;
-}
-function printRelatedLabels() {
-  var r = Math.floor((relatedTitles.length - 1) * Math.random());
-  var i = 0;
-  document.write('<div class="row">');
-  while (i < relatedTitles.length && i < 3) {
-    document.write('<div class="col-12 col-sm-4"><div class="card card-widget"><div class="card-img"><a href="' + relatedUrls[r] + '"><img src="' + relatedThumb[r].replace("/s72-c", "/w320-h230-c") + '" alt="' + relatedTitles[r] + '"/></a></div><div class="card-block"><h4 class="card-title"><a href="' + relatedUrls[r] + '">' + relatedTitles[r] + '</a></h4></div></div></div>');
-    if (r < relatedTitles.length - 1) {
-      r++;
-    } else {
-      r = 0;
-    }
-    i++;
-  }
-  document.write('</div>');
-}
+  });
+});
