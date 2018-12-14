@@ -41,12 +41,3 @@ $("#related-posts").each(function() {
     }
   });
 });
-
-document.write('');
-
-<div id='related-wrap'>
-  <div class='related-title'>
-    <h2>Related Posts</h2>
-  </div>
-  <div id='related-posts'></div>
-</div>
