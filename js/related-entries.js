@@ -1,13 +1,3 @@
-<b:loop values='data:post.labels' var='label'>
-	<b:if cond='data:label.isLast != &quot;true&quot;'></b:if>
-  <script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=related_results_labels&amp;max-results=7&quot;' type='text/javascript'/>
-</b:loop>
-<script type='text/javascript'>
-var maxposts=3;
-removeRelatedDuplicates();
-printRelatedLabels(&quot;<data:post.url/>&quot;);
-</script>
-
 function related_results_labels(e) {
   for (var l = 0; l < e.feed.entry.length; l++) {
     var t = e.feed.entry[l];
