@@ -1,3 +1,4 @@
+$(document).ready(function() {
 $("#related-posts").each(function() {
   var b = $(this).text();
   $.ajax({
@@ -40,4 +41,5 @@ $("#related-posts").each(function() {
       })
     }
   });
+});
 });
